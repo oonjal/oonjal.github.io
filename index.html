@@ -3,1292 +3,631 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oonjal Ventures | Investing in tomorrow's innovations</title>
-    <meta name="description" content="Oonjal Ventures is a venture capital firm focused on investing in early-stage technology companies with transformative potential.">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Boxicons CSS -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Oonjal Ventures | Investing in Tomorrow's Innovations</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #2C3E50;
-            --secondary-color: #3498DB;
-            --accent-color: #1ABC9C;
-            --text-color: #333333;
-            --light-color: #ECF0F1;
-            --dark-color: #2C3E50;
-            --gray-color: #95A5A6;
+            --primary-color: #FF9E81;
+            --secondary-color: #FFEAE5;
+            --accent-color: #F16B52;
+            --dark-color: #232E3C;
+            --light-color: #F8F9FA;
+            --gray-color: #6C757D;
+            --light-gray: #E9ECEF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-            overflow-x: hidden;
-        }
-        
-        /* Navbar */
-        .navbar {
-            background-color: transparent;
-            transition: background-color 0.3s ease;
-            padding: 1.5rem 0;
-        }
-        
-        .navbar.scrolled {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-color);
+            line-height: 1.7;
             background-color: var(--light-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
         }
         
-        .navbar-brand {
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
             font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--primary-color);
+            line-height: 1.2;
+            margin-bottom: 1rem;
         }
         
-        .navbar-brand span {
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .text-accent {
             color: var(--accent-color);
         }
         
-        .nav-link {
-            font-weight: 500;
-            margin: 0 10px;
-            color: var(--primary-color) !important;
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
             left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
         }
         
-        .nav-link:hover::after {
-            width: 100%;
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+        
+        .logo .highlight {
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            z-index: 1001;
         }
         
         /* Hero Section */
         .hero {
-            min-height: 85vh;
+            height: 100vh;
+            background-color: var(--light-color);
             display: flex;
             align-items: center;
+            padding-top: 80px;
             position: relative;
-            background-color: var(--light-color);
             overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            z-index: 0;
         }
         
         .hero-content {
             position: relative;
             z-index: 1;
+            max-width: 680px;
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
+        .hero-content h1 {
             margin-bottom: 1.5rem;
-            color: var(--primary-color);
         }
         
-        .hero p {
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-content p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            color: var(--text-color);
-        }
-        
-        .hero-btn {
-            padding: 0.8rem 2rem;
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .hero-btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .hero-image {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .dots-bg {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(var(--gray-color) 1px, transparent 1px);
-            background-size: 20px 20px;
-            opacity: 0.3;
-        }
-        
-        /* About Section */
-        .about-section {
-            padding: 6rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-weight: 700;
-            color: var(--primary-color);
-            display: inline-block;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        .feature-box {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .feature-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-box h3 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        /* Investment Focus */
-        .focus-section {
-            padding: 6rem 0;
-            background-color: var(--light-color);
-        }
-        
-        .focus-item {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .focus-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .focus-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .focus-item h3 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        /* Team Section */
-        .team-section {
-            padding: 6rem 0;
-        }
-        
-        .team-member {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .team-img-container {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 1.5rem;
-            border-radius: 50%;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .team-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .team-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(26, 188, 156, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .team-img-container:hover .team-overlay {
-            opacity: 1;
-        }
-        
-        .team-social a {
-            display: inline-block;
-            width: 35px;
-            height: 35px;
-            line-height: 35px;
-            background-color: white;
-            border-radius: 50%;
-            margin: 0 5px;
-            color: var(--accent-color);
-            transition: all 0.3s ease;
-        }
-        
-        .team-social a:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        .team-member h4 {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        .team-member p {
+            margin-bottom: 2.5rem;
             color: var(--gray-color);
-            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(241, 107, 82, 0.2);
+        }
+        
+        .btn-primary:hover {
+            background-color: #e05a44;
+            transform: translateY(-2px);
         }
         
         /* Contact Section */
-        .contact-section {
+        .contact {
             padding: 6rem 0;
             background-color: var(--light-color);
-        }
-        
-        .contact-info {
-            margin-bottom: 2rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 1rem;
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .contact-form {
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-control {
-            padding: 0.8rem 1.2rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-control:focus {
-            border-color: var(--accent-color);
-            box-shadow: none;
-        }
-        
-        .submit-btn {
-            padding: 0.8rem 2rem;
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--dark-color);
-            padding: 4rem 0 2rem;
-            color: white;
-        }
-        
-        .footer-logo {
-            font-weight: 700;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-        
-        .footer-logo span {
-            color: var(--accent-color);
-        }
-        
-        .footer-desc {
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .footer-social a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin-right: 10px;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-social a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-        }
-        
-        .footer-title {
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 10px;
+            overflow: hidden;
         }
         
-        .footer-title::after {
+        .contact:before {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent-color);
+            width: 50%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+            z-index: 0;
         }
         
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
         
-        .footer-links li {
+        .form-group {
             margin-bottom: 0.8rem;
         }
         
-        .footer-links li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
+        .form-label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
         
-        .footer-links li a:hover {
-            color: var(--accent-color);
-            padding-left: 5px;
+        .form-submit:hover {
+            background-color: #e05a44;
+            transform: translateY(-2px);
         }
         
-        .footer-contact-item {
-            display: flex;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-contact-icon {
-            margin-right: 1rem;
-            color: var(--accent-color);
-        }
-        
-        .footer-contact-text {
-            color: rgba(255, 255, 255, 0.7);
+        /* Footer */
+        footer {
+            padding: 2rem 0;
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            margin-top: 3rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
         }
         
-        /* Cookie Consent */
-        .cookie-consent {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 400px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-            z-index: 999;
+        .footer-links-bottom {
+            margin-top: 1rem;
+        }
+        
+        .footer-links-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links-bottom a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Modals */
+        .modal {
             display: none;
-        }
-        
-        .cookie-title {
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .cookie-text {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        
-        .cookie-buttons {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .cookie-btn {
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .cookie-accept {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-        }
-        
-        .cookie-accept:hover {
-            background-color: var(--secondary-color);
-        }
-        
-        .cookie-decline {
-            background-color: transparent;
-            color: var(--text-color);
-            border: 1px solid #ddd;
-        }
-        
-        .cookie-decline:hover {
-            background-color: #f5f5f5;
-        }
-        
-        /* Modal Styles */
-        .modal-content {
-            border-radius: 10px;
-            border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .modal-header {
-            border-bottom: 1px solid #eee;
-            padding: 1.5rem;
-        }
-        
-        .modal-title {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
-        .modal-body {
-            padding: 1.5rem;
-        }
-        
-        .modal-footer {
-            border-top: 1px solid #eee;
-            padding: 1.5rem;
-        }
-        
-        .close-btn {
-            padding: 8px 20px;
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .close-btn:hover {
-            background-color: var(--secondary-color);
-        }
-        
-        /* Back to Top Button */
-        .back-to-top {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background-color: var(--accent-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            overflow: auto;
             align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 2rem;
+            padding: 2.5rem;
+            border-radius: 5px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            animation: modalopen 0.4s;
+        }
+        
+        @keyframes modalopen {
+            from {transform: scale(0.8); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--gray-color);
             cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 99;
         }
         
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
+        .close-modal:hover {
+            color: var(--accent-color);
         }
         
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
+        .modal h3 {
+            margin-bottom: 1.5rem;
         }
         
-        /* Animations */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease;
+        .modal p {
+            margin-bottom: 1rem;
+            color: var(--gray-color);
         }
         
-        .fade-up.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsive */
-        @media (max-width: 991.98px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .navbar-toggler {
-                border: none;
-                outline: none !important;
-                box-shadow: none !important;
-            }
-            
-            .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-            }
-        }
-        
-        @media (max-width: 767.98px) {
-            .hero {
-                text-align: center;
-            }
-            
-            .hero h1 {
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
                 font-size: 2.5rem;
             }
             
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
+            .menu-toggle {
+                display: block;
             }
             
-            .hero-img-col {
-                margin-top: 2rem;
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
             }
             
-            .feature-box, .focus-item {
-                margin-bottom: 2rem;
+            .nav-links.active {
+                right: 0;
             }
             
-            .contact-info {
-                margin-bottom: 3rem;
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .hero:before {
+                width: 100%;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+                opacity: 0.5;
+            }
+            
+            .hero-content {
+                text-align: center;
+                padding: 0 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <!-- Header -->
+    <header id="header">
         <div class="container">
-            <a class="navbar-brand" href="#">Oonjal<span>Ventures</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#focus">Investment Focus</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+            <nav class="navbar">
+                <a href="#" class="logo">oonjal<span class="highlight">.</span>com</a>
+                
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
-    </nav>
-
+    </header>
+    
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="dots-bg"></div>
+    <section class="hero" id="hero">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 hero-content">
-                    <h1 class="fade-up">Investing in Tomorrow's Innovations</h1>
-                    <p class="fade-up">Oonjal Ventures partners with visionary entrepreneurs to build category-defining companies that transform industries and improve lives.</p>
-                    <a href="#contact" class="btn hero-btn fade-up">Get in Touch</a>
-                </div>
-                <div class="col-md-6 hero-img-col fade-up">
-                    <img src="https://via.placeholder.com/600x400" alt="Venture Capital" class="hero-image">
+            <div class="hero-content">
+                <h1>Oonjal Ventures</h1>
+                <h2>Investing in Tomorrow's Innovations</h2>
+                <p>Oonjal Ventures partners with visionary entrepreneurs to build category-defining companies that transform industries and improve lives.</p>
+                <div>
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="feature-box fade-up">
-                        <i class='bx bx-line-chart feature-icon'></i>
-                        <h3>Growth Partners</h3>
-                        <p>We provide more than just capital. Our team brings operational expertise, industry connections, and strategic guidance to help our portfolio companies scale.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box fade-up">
-                        <i class='bx bx-bulb feature-icon'></i>
-                        <h3>Innovation Focus</h3>
-                        <p>We seek out companies with innovative technologies, products, and business models that have the potential to disrupt industries and create new markets.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box fade-up">
-                        <i class='bx bx-globe feature-icon'></i>
-                        <h3>Global Perspective</h3>
-                        <p>With a diverse team and global network, we help our portfolio companies expand internationally and connect with partners worldwide.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Investment Focus Section -->
-    <section class="focus-section" id="focus">
-        <div class="container">
-            <div class="section-title">
-                <h2>Investment Focus</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="focus-item fade-up">
-                        <i class='bx bx-chip focus-icon'></i>
-                        <h3>Technology</h3>
-                        <p>AI/ML, Blockchain, Cloud Infrastructure, Cybersecurity, and Enterprise SaaS solutions that drive digital transformation.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="focus-item fade-up">
-                        <i class='bx bx-plus-medical focus-icon'></i>
-                        <h3>Healthcare</h3>
-                        <p>Digital health, biotechnology, medical devices, and healthcare IT platforms that improve patient outcomes and healthcare efficiency.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="focus-item fade-up">
-                        <i class='bx bx-leaf focus-icon'></i>
-                        <h3>Sustainability</h3>
-                        <p>Cleantech, renewable energy, sustainable agriculture, and climate technologies that address global environmental challenges.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="focus-item fade-up">
-                        <i class='bx bx-store focus-icon'></i>
-                        <h3>Consumer</h3>
-                        <p>E-commerce, D2C brands, marketplaces, and consumer applications that transform how people shop, connect, and engage.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="focus-item fade-up">
-                        <i class='bx bx-money focus-icon'></i>
-                        <h3>Fintech</h3>
-                        <p>Payment solutions, lending platforms, insurtech, wealth management, and financial infrastructure that democratize access to financial services.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="focus-item fade-up">
-                        <i class='bx bx-network-chart focus-icon'></i>
-                        <h3>Emerging Tech</h3>
-                        <p>Quantum computing, space technology, robotics, and other frontier technologies with the potential for extraordinary impact.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team-section" id="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Team</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-member fade-up">
-                        <div class="team-img-container">
-                            <img src="https://via.placeholder.com/300" alt="Team Member" class="team-img">
-                            <div class="team-overlay">
-                                <div class="team-social">
-                                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4>John Smith</h4>
-                        <p>Managing Partner</p>
-                        <p>Former CTO at XYZ Corp with extensive experience in scaling technology companies.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-member fade-up">
-                        <div class="team-img-container">
-                            <img src="https://via.placeholder.com/300" alt="Team Member" class="team-img">
-                            <div class="team-overlay">
-                                <div class="team-social">
-                                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4>Sarah Johnson</h4>
-                        <p>Partner</p>
-                        <p>Former Founder and CEO with multiple successful exits in the healthcare space.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-member fade-up">
-                        <div class="team-img-container">
-                            <img src="https://via.placeholder.com/300" alt="Team Member" class="team-img">
-                            <div class="team-overlay">
-                                <div class="team-social">
-                                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4>Michael Chen</h4>
-                        <p>Principal</p>
-                        <p>Previously led investments at ABC Ventures, focusing on enterprise software and fintech.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-member fade-up">
-                        <div class="team-img-container">
-                            <img src="https://via.placeholder.com/300" alt="Team Member" class="team-img">
-                            <div class="team-overlay">
-                                <div class="team-social">
-                                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4>Emily Davis</h4>
-                        <p>Associate</p>
-                        <p>Background in product management at high-growth startups in the consumer technology space.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <section class="contact" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Get in Touch</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="contact-info fade-up">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class='bx bx-map'></i>
-                            </div>
-                            <div>
-                                <h5>Our Location</h5>
-                                <p>123 Innovation Drive, Suite 500<br>Palo Alto, CA 94301</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class='bx bx-envelope'></i>
-                            </div>
-                            <div>
-                                <h5>Email Us</h5>
-                                <p>vc@oonjal.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class='bx bx-phone'></i>
-                            </div>
-                            <div>
-                                <h5>Call Us</h5>
-                                <p>+1 (650) 555-0123</p>
-                            </div>
-                        </div>
-                        <p class="mt-4">We're always on the lookout for innovative startups. If you're building something transformative, we'd love to hear from you.</p>
+            <h2 style="position: relative; z-index: 1;">Connect With Us</h2>
+            <p style="position: relative; z-index: 1;">Looking for funding or want to discuss your venture? We'd love to hear from you.</p>
+            
+            <div class="contact-form" style="position: relative; z-index: 1;">
+                <form id="venture-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
                     </div>
-                </div>
-                <div class="col-lg-7">
-                    <form class="contact-form fade-up" id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Subject">
-                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn submit-btn">Send Message</button>
-                    </form>
-                </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company" class="form-label">Company Name</label>
+                        <input type="text" id="company" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="stage" class="form-label">Investment Stage</label>
+                        <select id="stage" class="form-control" required>
+                            <option value="" selected disabled>Select your stage</option>
+                            <option value="pre-seed">Pre-Seed</option>
+                            <option value="seed">Seed</option>
+                            <option value="series-a">Series A</option>
+                            <option value="series-b">Series B</option>
+                            <option value="growth">Growth</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Tell Us About Your Venture</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Submit Inquiry</button>
+                </form>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <a href="#" class="footer-logo">Oonjal<span>Ventures</span></a>
-                    <p class="footer-desc">We invest in exceptional founders building category-defining companies across technology, healthcare, and sustainability sectors.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class='bx bxl-linkedin'></i></a>
-                        <a href="#"><i class='bx bxl-twitter'></i></a>
-                        <a href="#"><i class='bx bxl-facebook'></i></a>
-                        <a href="#"><i class='bx bxl-instagram'></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#focus">Investment Focus</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h4 class="footer-title">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal">Disclaimer</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#cookiesModal">Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="footer-title">Contact Info</h4>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class='bx bx-map'></i>
-                        </div>
-                        <div class="footer-contact-text">
-                            123 Innovation Drive, Suite 500<br>Palo Alto, CA 94301
-                        </div>
-                    </div>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class='bx bx-envelope'></i>
-                        </div>
-                        <div class="footer-contact-text">
-                            vc@oonjal.com
-                        </div>
-                    </div>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class='bx bx-phone'></i>
-                        </div>
-                        <div class="footer-contact-text">
-                            +1 (650) 555-0123
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Oonjal Ventures. All Rights Reserved.</p>
+                <div class="footer-links-bottom">
+                    <a href="#" onclick="openModal('copyright-modal')">Copyright</a>
+                    <a href="#" onclick="openModal('disclaimer-modal')">Disclaimer</a>
+                    <a href="#" onclick="openModal('privacy-modal')">Privacy Policy</a>
+                    <a href="#" onclick="openModal('terms-modal')">Terms of Use</a>
+                </div>
             </div>
         </div>
     </footer>
-
-    <!-- Back to Top -->
-    <div class="back-to-top">
-        <i class='bx bx-up-arrow-alt'></i>
-    </div>
-
-    <!-- Cookie Consent -->
-    <div class="cookie-consent" id="cookieConsent">
-        <h5 class="cookie-title">We use cookies</h5>
-        <p class="cookie-text">We use cookies to improve your experience on our website. By continuing to browse, you agree to our use of cookies.</p>
-        <div class="cookie-buttons">
-            <button class="cookie-btn cookie-decline" id="cookieDecline">Decline</button>
-            <button class="cookie-btn cookie-accept" id="cookieAccept">Accept</button>
-        </div>
-    </div>
-
-    <!-- Privacy Policy Modal -->
-    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>1. Introduction</h6>
-                    <p>Oonjal Ventures ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
-                    
-                    <h6>2. Information We Collect</h6>
-                    <p>We may collect information about you in a variety of ways. The information we may collect via the Website includes:</p>
-                    <p><strong>Personal Data:</strong> Personally identifiable information, such as your name, email address, and telephone number, that you voluntarily give to us when you choose to participate in various activities related to the Website, such as online chat, posting messages in comment sections or in our forums, and submitting contact forms.</p>
-                    <p><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Website, such as your IP address, browser type, operating system, access times, and the pages you have viewed directly before and after accessing the Website.</p>
-                    <p><strong>Financial Data:</strong> Financial information, such as data related to your payment method (e.g., valid credit card number, card brand, expiration date) that we may collect when you make a purchase or investment through the Website.</p>
-                    
-                    <h6>3. Use of Your Information</h6>
-                    <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Website to:</p>
-                    <ul>
-                        <li>Create and manage your account.</li>
-                        <li>Email you regarding your account or investment.</li>
-                        <li>Fulfill and manage investments and transactions.</li>
-                        <li>Generate a personal profile about you to make future visits to the Website more personalized.</li>
-                        <li>Increase the efficiency and operation of the Website.</li>
-                        <li>Request feedback and contact you about your use of the Website.</li>
-                        <li>Resolve disputes and troubleshoot problems.</li>
-                        <li>Respond to product and customer service requests.</li>
-                    </ul>
-                    
-                    <h6>4. Disclosure of Your Information</h6>
-                    <p>We may share information we have collected about you in certain situations. Your information may be disclosed as follows:</p>
-                    <p><strong>By Law or to Protect Rights:</strong> If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.</p>
-                    <p><strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.</p>
-                    <p><strong>Marketing Communications:</strong> With your consent, or with an opportunity for you to withdraw consent, we may share your information with third parties for marketing purposes.</p>
-                    <p><strong>Interactions with Other Users:</strong> If you interact with other users of the Website, those users may see your name, profile photo, and descriptions of your activity.</p>
-                    <p><strong>Online Postings:</strong> When you post comments, contributions, or other content to the Website, your posts may be viewed by all users and may be publicly distributed outside the Website in perpetuity.</p>
-                    <p><strong>Third-Party Advertisers:</strong> We may use third-party advertising companies to serve ads when you visit the Website. These companies may use information about your visits to the Website and other websites that are contained in web cookies in order to provide advertisements about goods and services of interest to you.</p>
-                    <p><strong>Business Partners:</strong> We may share your information with our business partners to offer you certain products, services, or promotions.</p>
-                    
-                    <h6>5. Security of Your Information</h6>
-                    <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
-                    
-                    <h6>6. Contact Us</h6>
-                    <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
-                    <p>
-                        Oonjal Ventures<br>
-                        123 Innovation Drive, Suite 500<br>
-                        Palo Alto, CA 94301<br>
-                        vc@oonjal.com
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn close-btn" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Terms of Service Modal -->
-    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>1. Agreement to Terms</h6>
-                    <p>By accessing our Website, you agree to be bound by these Terms of Service and to use the Website in accordance with these Terms, our Privacy Policy, and any additional terms and conditions that may apply to specific sections of the Website or to products and services available through the Website.</p>
-                    
-                    <h6>2. Intellectual Property</h6>
-                    <p>The Website and its original content, features, and functionality are owned by Oonjal Ventures and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
-                    
-                    <h6>3. User Accounts</h6>
-                    <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Website.</p>
-                    
-                    <h6>4. Links to Other Websites</h6>
-                    <p>Our Website may contain links to third-party websites or services that are not owned or controlled by Oonjal Ventures. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
-                    
-                    <h6>5. Termination</h6>
-                    <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Website will immediately cease.</p>
-                    
-                    <h6>6. Limitation of Liability</h6>
-                    <p>In no event shall Oonjal Ventures, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Website.</p>
-                    
-                    <h6>7. Governing Law</h6>
-                    <p>These Terms shall be governed and construed in accordance with the laws of California, United States, without regard to its conflict of law provisions.</p>
-                    
-                    <h6>8. Changes</h6>
-                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days' notice prior to any new terms taking effect.</p>
-                    
-                    <h6>9. Contact Us</h6>
-                    <p>If you have any questions about these Terms, please contact us at vc@oonjal.com.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn close-btn" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Disclaimer Modal -->
-    <div class="modal fade" id="disclaimerModal" tabindex="-1" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="disclaimerModalLabel">Disclaimer</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>General Information</h6>
-                    <p>The information contained on the Oonjal Ventures website is for general information purposes only. Oonjal Ventures assumes no responsibility for errors or omissions in the contents of the website.</p>
-                    
-                    <h6>No Investment Advice</h6>
-                    <p>The information presented on this website does not constitute investment advice, financial advice, trading advice, or any other sort of advice and you should not treat any of the website's content as such. Oonjal Ventures does not recommend that any security or investment opportunity should be bought, sold, or held by you. Do conduct your own due diligence and consult your financial advisor before making any investment decisions.</p>
-                    
-                    <h6>Investment Risks</h6>
-                    <p>Investments in startups, early-stage companies, and venture capital involve a high degree of risk. Investors must be able to afford the loss of their entire investment.</p>
-                    
-                    <h6>Past Performance</h6>
-                    <p>Past performance is not indicative of future results. Any historical returns, expected returns, or probability projections may not reflect actual future performance.</p>
-                    
-                    <h6>Forward-Looking Statements</h6>
-                    <p>The website may contain certain forward-looking statements and information relating to Oonjal Ventures that are based on the beliefs of Oonjal Ventures as well as assumptions made by and information currently available to Oonjal Ventures. Such statements reflect the current views of Oonjal Ventures with respect to future events and are subject to certain risks, uncertainties, and assumptions.</p>
-                    
-                    <h6>External Links</h6>
-                    <p>The Oonjal Ventures website may contain links to external websites that are not provided or maintained by or in any way affiliated with Oonjal Ventures. Please note that Oonjal Ventures does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p>
-                    
-                    <h6>Limitation of Liability</h6>
-                    <p>In no event shall Oonjal Ventures be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the website or the contents of the website.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn close-btn" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cookies Policy Modal -->
-    <div class="modal fade" id="cookiesModal" tabindex="-1" aria-labelledby="cookiesModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cookiesModalLabel">Cookie Policy</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>What Are Cookies</h6>
-                    <p>Cookies are small pieces of data stored on your device (computer or mobile device) when you visit a website. They are widely used to make websites work more efficiently, as well as to provide information to the owners of the site.</p>
-                    
-                    <h6>How We Use Cookies</h6>
-                    <p>We use cookies for a variety of reasons detailed below:</p>
-                    <ul>
-                        <li><strong>Necessary Cookies:</strong> These are essential to enable you to use the website and its features.</li>
-                        <li><strong>Functionality Cookies:</strong> These allow the website to remember choices you make (such as your language or the region you are in) and provide enhanced, more personal features.</li>
-                        <li><strong>Analytical/Performance Cookies:</strong> These allow us to recognize and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works.</li>
-                        <li><strong>Targeting Cookies:</strong> These cookies record your visit to our website, the pages you have visited, and the links you have followed. We will use this information to make our website and the advertising displayed on it more relevant to your interests.</li>
-                    </ul>
-                    
-                    <h6>Third-Party Cookies</h6>
-                    <p>In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the website, deliver advertisements on and through the website, and so on.</p>
-                    
-                    <h6>How to Control Cookies</h6>
-                    <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer, and you can set most browsers to prevent them from being placed. If you do this, however, you may have to manually adjust some preferences every time you visit a site, and some services and functionalities may not work.</p>
-                    
-                    <h6>More Information</h6>
-                    <p>For more information about cookies, including how to see what cookies have been set on your device and how to manage and delete them, visit www.allaboutcookies.org.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn close-btn" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap Bundle JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Custom JS -->
+    <!-- Modals -->
+    <div id="disclaimer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('disclaimer-modal')">&times;</span>
+            <h3>Disclaimer</h3>
+            <p>The information contained on this website is for general information purposes only. The information is provided by Oonjal Ventures and while we endeavor to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.</p>
+        </div>
+    </div>
+    
+    <div id="copyright-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('copyright-modal')">&times;</span>
+            <h3>Copyright Notice</h3>
+            <p>© 2025 Oonjal Ventures. All rights reserved.</p>
+            <p>All content on this website, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, and data compilations, is the property of Oonjal Ventures and is protected by international copyright laws.</p>
+        </div>
+    </div>
+    
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('privacy-modal')">&times;</span>
+            <h3>Privacy Policy</h3>
+            <p>At Oonjal Ventures, we respect your privacy and are committed to protecting it through our compliance with this policy.</p>
+            <p>This policy describes the types of information we may collect from you or that you may provide when you visit our website and our practices for collecting, using, maintaining, protecting, and disclosing that information.</p>
+        </div>
+    </div>
+    
+    <div id="terms-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('terms-modal')">&times;</span>
+            <h3>Terms of Use</h3>
+            <p>By accessing this website, you agree to be bound by these website Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
+            <p>If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.</p>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
     <script>
-        // Navbar scroll effect
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
             if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+                header.classList.add('scrolled');
             } else {
-                navbar.classList.remove('scrolled');
+                header.classList.remove('scrolled');
             }
         });
         
-        // Smooth scrolling for anchor links
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                if (this.getAttribute('href') !== '#' && !this.getAttribute('onclick')) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
         
-        // Cookie consent functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            // Check if user has already made a choice
-            const cookieChoice = localStorage.getItem('cookieConsent');
-            
-            if (cookieChoice === null) {
-                // If no choice has been made, show the cookie consent popup
-                setTimeout(() => {
-                    document.getElementById('cookieConsent').style.display = 'block';
-                }, 2000);
-            }
-            
-            // Handle cookie accept button
-            document.getElementById('cookieAccept').addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
-                document.getElementById('cookieConsent').style.display = 'none';
-            });
-            
-            // Handle cookie decline button
-            document.getElementById('cookieDecline').addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'declined');
-                document.getElementById('cookieConsent').style.display = 'none';
-            });
-        });
-        
-        // Back to top button functionality
-        const backToTopBtn = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Reveal animations on scroll
-        const fadeElements = document.querySelectorAll('.fade-up');
-        
-        function checkFade() {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('show');
-                }
-            });
+        // Modal Functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
         
-        // Run on initial load
-        checkFade();
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
         
-        // Run on scroll
-        window.addEventListener('scroll', checkFade);
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
         
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Form Submission
+        const ventureForm = document.getElementById('venture-form');
+        ventureForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
             
-            // Here you would typically send an AJAX request to your server
-            // For this demo, we'll just show an alert
-            alert('Thank you for contacting us! We will get back to you soon.');
+            alert(`Thank you, ${name}! Your inquiry for ${company} has been submitted. We'll contact you at ${email} shortly.`);
             
-            // Clear the form
-            this.reset();
+            ventureForm.reset();
         });
     </script>
 </body>
