@@ -14,435 +14,11 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
             rel="stylesheet" />
+        <link href="style.css" rel="stylesheet">
 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-        <style>
-            :root {
-                --primary-color: #fc815c;
-                --secondary-color: #ffeae5;
-                --accent-color: #f74828;
-                --dark-color: #3e3e3e;
-                --light-color: #f8f9fa;
-                --gray-color: #6c757d;
-                --light-gray: #e9ecef;
-            }
-
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: "Montserrat", sans-serif;
-                color: var(--dark-color);
-                line-height: 1.7;
-                background-color: var(--light-color);
-            }
-
-            br {
-                display: block;
-                content: "";
-                margin: 15px 0;
-            }
-
-            .container {
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 1.5rem;
-            }
-
-            /* Typography */
-            h1,
-            h2,
-            h3 {
-                font-weight: 700;
-                line-height: 1.2;
-                margin-bottom: 1rem;
-            }
-
-            h1 {
-                font-size: 3.5rem;
-                font-weight: 800;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            p {
-                margin-bottom: 1.5rem;
-            }
-
-            .text-accent {
-                color: var(--accent-color);
-            }
-
-            /* Header and Navigation */
-            header {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 1000;
-                background-color: whitesmoke;
-                transition: background-color 0.3s ease;
-            }
-
-            header.scrolled {
-                background-color: rgba(255, 255, 255, 0.98);
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0.8rem 0;
-            }
-
-            .logo {
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-            }
-
-            .logo img {
-                height: 60px; /* Adjusted to fit the smaller header height */
-                width: auto;
-                max-width: 100%;
-            }
-
-            /* Responsive logo size */
-            @media (max-width: 768px) {
-                .logo img {
-                    height: 40px;
-                }
-            }
-
-            @media (max-width: 576px) {
-                .logo img {
-                    height: 35px;
-                }
-            }
-
-            .nav-links {
-                display: flex;
-                list-style: none;
-            }
-
-            .nav-links li {
-                margin-left: 2.5rem;
-            }
-
-            .nav-links a {
-                text-decoration: none;
-                color: var(--dark-color);
-                font-weight: 500;
-                font-size: 0.95rem;
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-                transition: color 0.3s ease;
-            }
-
-            .nav-links a:hover {
-                color: var(--accent-color);
-            }
-
-            .menu-toggle {
-                display: none;
-                cursor: pointer;
-                font-size: 1.5rem;
-                color: var(--dark-color);
-                z-index: 1001;
-            }
-
-            /* Hero Section */
-            .hero {
-                height: 100vh;
-                background-color: var(--light-color);
-                display: flex;
-                align-items: center;
-                padding-top: 60px; /* Reduced from 80px to 60px to account for smaller header */
-                position: relative;
-                overflow: hidden;
-            }
-
-            .hero:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 50%;
-                height: 100%;
-                background-color: var(--secondary-color);
-                clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-                z-index: 0;
-            }
-
-            .hero-content {
-                position: relative;
-                z-index: 1;
-                max-width: 800px;
-            }
-
-            .hero-content h1 {
-                margin-bottom: 1.5rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1.5rem;
-                font-weight: 400;
-                color: var(--accent-color);
-                margin-bottom: 1.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1.2rem;
-                margin-bottom: 2.5rem;
-                color: var(--gray-color);
-            }
-
-            .btn {
-                display: inline-block;
-                padding: 0.8rem 1.8rem;
-                border-radius: 3px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 0.95rem;
-                transition: all 0.3s ease;
-            }
-
-            .btn-primary {
-                background-color: var(--accent-color);
-                color: white;
-                box-shadow: 0 4px 15px rgba(241, 107, 82, 0.2);
-            }
-
-            .btn-primary:hover {
-                background-color: #e05a44;
-                transform: translateY(-2px);
-            }
-
-            /* Contact Section */
-            .contact {
-                padding: 6rem 0;
-                background-color: var(--light-color);
-                position: relative;
-                overflow: hidden;
-            }
-
-            .contact:before {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 50%;
-                height: 100%;
-                background-color: var(--secondary-color);
-                clip-path: polygon(0 0, 100% 100%, 0 100%);
-                z-index: 0;
-            }
-
-            .contact-form {
-                background-color: rgba(255, 255, 255, 0.1);
-                border-radius: 5px;
-                padding: 1.5rem;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            }
-
-            .form-group {
-                margin-bottom: 0.8rem;
-            }
-
-            .form-label {
-                display: block;
-                margin-bottom: 0.3rem;
-                font-weight: 500;
-            }
-
-            .form-control {
-                width: 100%;
-                padding: 0.8rem 1rem;
-                border: 1px solid var(--light-gray);
-                border-radius: 3px;
-                font-family: "Montserrat", sans-serif;
-            }
-
-            .form-control:focus {
-                outline: none;
-                border-color: var(--accent-color);
-            }
-
-            textarea.form-control {
-                min-height: 150px;
-                resize: vertical;
-            }
-
-            .form-submit {
-                background-color: var(--accent-color);
-                color: white;
-                border: none;
-                padding: 0.8rem 2rem;
-                border-radius: 3px;
-                cursor: pointer;
-                font-weight: 600;
-                transition: all 0.3s ease;
-            }
-
-            .form-submit:hover {
-                background-color: #e05a44;
-                transform: translateY(-2px);
-            }
-
-            /* Footer */
-            footer {
-                padding: 2rem 0;
-                background-color: var(--dark-color);
-                color: white;
-                text-align: center;
-            }
-
-            .footer-bottom {
-                color: rgba(255, 255, 255, 0.5);
-                font-size: 0.9rem;
-            }
-
-            .footer-links-bottom {
-                margin-top: 1rem;
-            }
-
-            .footer-links-bottom a {
-                color: rgba(255, 255, 255, 0.5);
-                text-decoration: none;
-                margin: 0 0.5rem;
-                transition: color 0.3s ease;
-            }
-
-            .footer-links-bottom a:hover {
-                color: var(--accent-color);
-            }
-
-            /* Modals */
-            .modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 2000;
-                overflow: auto;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .modal-content {
-                background-color: white;
-                margin: 2rem;
-                padding: 2.5rem;
-                border-radius: 5px;
-                max-width: 600px;
-                width: 100%;
-                position: relative;
-                animation: modalopen 0.4s;
-            }
-
-            @keyframes modalopen {
-                from {
-                    transform: scale(0.8);
-                    opacity: 0;
-                }
-                to {
-                    transform: scale(1);
-                    opacity: 1;
-                }
-            }
-
-            .close-modal {
-                position: absolute;
-                top: 1.5rem;
-                right: 1.5rem;
-                font-size: 1.5rem;
-                color: var(--gray-color);
-                cursor: pointer;
-            }
-
-            .close-modal:hover {
-                color: var(--accent-color);
-            }
-
-            .modal h3 {
-                margin-bottom: 1.5rem;
-            }
-
-            .modal p {
-                margin-bottom: 1rem;
-                color: var(--gray-color);
-            }
-
-            /* Responsive Styles */
-            @media (max-width: 768px) {
-                h1 {
-                    font-size: 2.5rem;
-                }
-
-                .menu-toggle {
-                    display: block;
-                }
-
-                .nav-links {
-                    position: fixed;
-                    top: 0;
-                    right: -100%;
-                    width: 80%;
-                    height: 100vh;
-                    background-color: white;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    transition: right 0.3s ease;
-                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                }
-
-                .nav-links.active {
-                    right: 0;
-                }
-
-                .nav-links li {
-                    margin: 1.5rem 0;
-                }
-
-                .hero:before {
-                    width: 100%;
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
-                    opacity: 0.5;
-                }
-
-                .hero-content {
-                    text-align: center;
-                    padding: 0 1rem;
-                }
-            }
-
-            @media (max-width: 576px) {
-                .container {
-                    padding: 0 1rem;
-                }
-
-                h1 {
-                    font-size: 2rem;
-                }
-
-                .contact-form {
-                    padding: 1.5rem;
-                }
-            }
-        </style>
     </head>
     <body>
         <!-- Header -->
@@ -452,15 +28,6 @@
                     <a href="#" class="logo">
                         <img src="oonjal.png" alt="Oonjal Ventures Logo" />
                     </a>
-
-                    <div class="menu-toggle" id="menu-toggle">
-                        <i class="fas fa-bars"></i>
-                    </div>
-
-                    <ul class="nav-links" id="nav-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
                 </nav>
             </div>
         </header>
@@ -479,59 +46,13 @@
                         lever.
                     </p>
                     <div>
-                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <button id="reveal-email" class="btn btn-primary">Click to show email</button>
+                        <p id="email-display" style="margin-top: 20px; font-weight: bold; display: none;"></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
-            <div class="container">
-                <h2 style="position: relative; z-index: 1">Connect With Us</h2>
-                <p style="position: relative; z-index: 1">
-                    Looking for funding or want to discuss your venture? We'd love to hear from you.
-                </p>
-
-                <div class="contact-form" style="position: relative; z-index: 1">
-                    <form id="venture-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Full Name</label>
-                            <input type="text" id="name" class="form-control" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" class="form-control" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="company" class="form-label">Company Name</label>
-                            <input type="text" id="company" class="form-control" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="stage" class="form-label">Investment Stage</label>
-                            <select id="stage" class="form-control" required>
-                                <option value="" selected disabled>Select your stage</option>
-                                <option value="pre-seed">Pre-Seed</option>
-                                <option value="seed">Seed</option>
-                                <option value="series-a">Series A</option>
-                                <option value="series-b">Series B</option>
-                                <option value="growth">Growth</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message" class="form-label">Tell Us About Your Venture</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-
-                        <button type="submit" class="form-submit">Submit Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </section>
 
         <!-- Footer -->
         <footer>
@@ -608,16 +129,7 @@
             </div>
         </div>
 
-        <!-- EmailJS CDN -->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-        <!-- JavaScript -->
         <script>
-            // Initialize EmailJS - Replace with your actual EmailJS user ID
-            (function() {
-                emailjs.init("YOUR_EMAILJS_USER_ID");
-            })();
-
             // Header Scroll Effect
             window.addEventListener('scroll', function() {
                 const header = document.getElementById('header');
@@ -628,32 +140,34 @@
                 }
             });
 
-            // Mobile Menu Toggle
+            // Mobile Menu Toggle - Check if elements exist before using them
             const menuToggle = document.getElementById('menu-toggle');
             const navLinks = document.getElementById('nav-links');
 
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
 
-                const icon = menuToggle.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-
-            // Close menu when clicking on a link
-            const navItems = document.querySelectorAll('.nav-links a');
-            navItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    menuToggle.querySelector('i').classList.remove('fa-times');
-                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    const icon = menuToggle.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                 });
-            });
+
+                // Close menu when clicking on a link
+                const navItems = document.querySelectorAll('.nav-links a');
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.querySelector('i').classList.remove('fa-times');
+                        menuToggle.querySelector('i').classList.add('fa-bars');
+                    });
+                });
+            }
 
             // Smooth Scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -693,49 +207,71 @@
                     }
                 }
             }
-
-            // Form Submission
-            const ventureForm = document.getElementById('venture-form');
-            ventureForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const company = document.getElementById('company').value;
-                const stage = document.getElementById('stage').value;
-                const message = document.getElementById('message').value;
-
-                // Show loading state
-                const submitBtn = document.querySelector('.form-submit');
-                const originalBtnText = submitBtn.textContent;
-                submitBtn.textContent = 'Sending...';
-                submitBtn.disabled = true;
-
-                // Prepare template params for EmailJS
-                const templateParams = {
-                    to_email: 'vc@oonjal.com', // Email address for Oonjal Ventures
-                    from_name: name,
-                    from_email: email,
-                    company_name: company,
-                    investment_stage: stage,
-                    message: message
-                };
-
-                // Send the email using EmailJS
-                emailjs.send('default_service', 'template_id', templateParams) // Replace with your service and template IDs
-                    .then(function(response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                        alert(`Thank you, ${name}! Your inquiry for ${company} has been submitted. We'll contact you shortly.`);
-                        submitBtn.textContent = originalBtnText;
-                        submitBtn.disabled = false;
-                        ventureForm.reset();
-                    })
-                    .catch(function(error) {
-                        console.log('FAILED...', error);
-                        alert('Failed to send your message. Please try again or email us directly at vc@oonjal.com');
-                        submitBtn.textContent = originalBtnText;
-                        submitBtn.disabled = false;
-                    });
+            
+            // Email reveal functionality
+            const revealButton = document.getElementById('reveal-email');
+            const emailDisplay = document.getElementById('email-display');
+            
+            // The email address in a simple encoded format
+            const encodedEmail = 'ub?nnmi`k-bnl'; // This is "vc@oonjal.com" with a simple shift
+            
+            // Function to decode the email
+            function decodeEmail(encoded) {
+                let decoded = '';
+                for (let i = 0; i < encoded.length; i++) {
+                    let charCode = encoded.charCodeAt(i);
+                    if (charCode >= 32 && charCode <= 126) { // Printable ASCII range
+                        charCode = (charCode - 32 + 1) % 95 + 32; // Shift by 1 in the printable range
+                    }
+                    decoded += String.fromCharCode(charCode);
+                }
+                return decoded;
+            }
+            
+            // Make sure the elements exist before adding event listeners
+            if (revealButton && emailDisplay) {
+                // Show email immediately on click/press
+                revealButton.addEventListener('mousedown', function() {
+                    // Show the email when button is pressed
+                    emailDisplay.textContent = decodeEmail(encodedEmail);
+                    emailDisplay.style.display = 'block';
+                    revealButton.textContent = 'Please email us at below address';
+                });
+                
+                // Hide email when button is released
+                revealButton.addEventListener('mouseup', function() {
+                    // Hide the email when button is released
+                    emailDisplay.style.display = 'none';
+                    revealButton.textContent = 'Click to show email';
+                });
+                
+                revealButton.addEventListener('mouseleave', function() {
+                    // Also hide email if mouse leaves the button
+                    emailDisplay.style.display = 'none';
+                    revealButton.textContent = 'Click to show email';
+                });
+                
+                // For touch devices
+                revealButton.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    // Show the email when touched
+                    emailDisplay.textContent = decodeEmail(encodedEmail);
+                    emailDisplay.style.display = 'block';
+                    revealButton.textContent = 'Email Revealed';
+                });
+                
+                revealButton.addEventListener('touchend', function() {
+                    // Hide the email when touch ends
+                    emailDisplay.style.display = 'none';
+                    revealButton.textContent = 'Click to show email';
+                });
+                
+                revealButton.addEventListener('touchcancel', function() {
+                    // Also hide email if touch is canceled
+                    emailDisplay.style.display = 'none';
+                    revealButton.textContent = 'Click to show email';
+                });
+            }
         </script>
     </body>
 </html>
