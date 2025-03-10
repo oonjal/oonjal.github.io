@@ -126,6 +126,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 600px;
 }
 
 /* Header styling */
@@ -202,6 +203,7 @@ section {
 
   .logo img {
     height: 120px; /* Adjusted from original 200px */
+    justify-content: inherit;
   }
 }
 
@@ -303,18 +305,18 @@ section {
 }
 
 .floating-line {
-    font-size: 10px;
-    position: fixed;
-    bottom: 20px;       /* Adjust as needed */
-    right: -20px;        /* Adjust as needed */
-    width: 200px;       /* Length of the line */
-    height: 0px;        /* Thickness of the line */
-    background-color: #7045ff; /* Line color */
-    z-index: 1000;
-   color: #bababa 
-
+  font-size: 10px;
+  position: fixed;
+  width: 300px; /* Length of the line */
+  height: 0; /* Thickness of the line */
+  left: -140px;
+  top: 20%;
+  background-color: #7045ff; /* Line color */
+  z-index: 1000;
+  color: #bababa;
+  transform: rotate(-90deg);
 }
 
 .floating-line a {
- color: #bababa 
+  color: #bababa;
 }
