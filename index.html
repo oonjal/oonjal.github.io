@@ -5,273 +5,98 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Oonjal Ventures | Investing in Tomorrow's Innovations</title>
 
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
-
-        <!-- Google Fonts -->
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet" />
-        <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" />
 
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
     </head>
+
     <body>
-        <!-- Header -->
         <header id="header">
             <div class="container">
                 <nav class="navbar">
                     <a href="#" class="logo">
-                        <img src="oonjal.png" alt="Oonjal Ventures Logo" />
+                        <img src="assets/images/oonjal-logo-transparent-100.png" alt="Oonjal Ventures Logo" />
                     </a>
                 </nav>
             </div>
         </header>
 
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Oonjal Ventures</h1>
-                    <h2>Investing in Tomorrow's Innovations</h2>
-                    <p>
-                        Oonjal Ventures partners with visionary entrepreneurs to build category-defining companies that
-                        transforms productivity. <br />We are a team of former CIOs and CTOs who focus on solving
-                        practical, real-world problems through AI, automation, and technology platforms. Our investments
-                        prioritize exceptional user experience and process optimization, using technology as a strategic
-                        lever.
-                    </p>
-                    <div>
-                        <button id="reveal-email" class="btn btn-primary">Click to show email</button>
-                        <p id="email-display" style="margin-top: 20px; font-weight: bold; display: none;"></p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <ul class="timeline">
+            <li class="bar"></li>
+        </ul>
 
+        <div class="container">
+            <section data-name="About Us">
+                <h1>About Us</h1>
+                <h2>
+                    <b>Oonjal Ventures</b> partners with visionary entrepreneurs to build category-defining companies
+                    that transforms productivity.
+                </h2>
+                <h2>
+                    We are a team of former <b>CIOs and CTOs</b> who understand the need for solving practical,
+                    real-world problems.
+                </h2>
+            </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-bottom">
-                    <p>&copy; 2025 Oonjal Ventures. All Rights Reserved.</p>
-                    <div class="footer-links-bottom">
-                        <a href="#" onclick="openModal('copyright-modal')">Copyright</a>
-                        <a href="#" onclick="openModal('disclaimer-modal')">Disclaimer</a>
-                        <a href="#" onclick="openModal('privacy-modal')">Privacy Policy</a>
-                        <a href="#" onclick="openModal('terms-modal')">Terms of Use</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+            <section data-name="Profile">
+                <h1>Profile</h1>
+                <h2>
+                    We profile tools and technologies that use <b>AI, Automation and Cloud Scale</b> to transform
+                    businesses, streamline operations, and drive innovation across industries.
+                </h2>
+                <h2>
+                    Our focus is on identifying scalable solutions that deliver measurable ROI while helping IT leaders
+                    navigate the rapidly evolving digital landscape.
+                </h2>
+            </section>
 
-        <!-- Modals -->
-        <div id="disclaimer-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal" onclick="closeModal('disclaimer-modal')">&times;</span>
-                <h3>Disclaimer</h3>
-                <p>
-                    The information contained on this website is for general information purposes only. The information
-                    is provided by Oonjal Ventures and while we endeavor to keep the information up to date and correct,
-                    we make no representations or warranties of any kind, express or implied, about the completeness,
-                    accuracy, reliability, suitability or availability with respect to the website or the information,
-                    products, services, or related graphics contained on the website for any purpose.
-                </p>
-            </div>
-        </div>
+            <section data-name="Contact">
+                <h1>Contact</h1>
+                <h2>
+                    <a class="email-protect" href="javascript:void(0)"><b>moc.lajnoo@cv</b></a>and connect with us over
+                    email. All information will be treated as company confidential.
+                </h2>
+            </section>
 
-        <div id="copyright-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal" onclick="closeModal('copyright-modal')">&times;</span>
-                <h3>Copyright Notice</h3>
-                <p>© 2025 Oonjal Ventures. All rights reserved.</p>
+            <section data-name="Disclaimer">
+                <h1>Disclaimers & Copyrights</h1>
+                <h3>© 2025 Oonjal Ventures. All Rights Reserved.</h3>
                 <p>
                     All content on this website, including but not limited to text, graphics, logos, icons, images,
                     audio clips, digital downloads, and data compilations, is the property of Oonjal Ventures and is
                     protected by international copyright laws.
                 </p>
-            </div>
-        </div>
-
-        <div id="privacy-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal" onclick="closeModal('privacy-modal')">&times;</span>
-                <h3>Privacy Policy</h3>
                 <p>
                     At Oonjal Ventures, we respect your privacy and are committed to protecting it through our
-                    compliance with this policy.
+                    compliance with this policy. By accessing this website, you agree to be bound by these website Terms
+                    and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for
+                    compliance with any applicable local laws.
                 </p>
-                <p>
-                    This policy describes the types of information we may collect from you or that you may provide when
-                    you visit our website and our practices for collecting, using, maintaining, protecting, and
-                    disclosing that information.
-                </p>
-            </div>
+            </section>
         </div>
 
-        <div id="terms-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal" onclick="closeModal('terms-modal')">&times;</span>
-                <h3>Terms of Use</h3>
-                <p>
-                    By accessing this website, you agree to be bound by these website Terms and Conditions of Use, all
-                    applicable laws and regulations, and agree that you are responsible for compliance with any
-                    applicable local laws.
-                </p>
-                <p>
-                    If you do not agree with any of these terms, you are prohibited from using or accessing this site.
-                    The materials contained in this website are protected by applicable copyright and trademark law.
-                </p>
-            </div>
-        </div>
-
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7TGM9KCMHG"></script>
         <script>
-            // Header Scroll Effect
-            window.addEventListener('scroll', function() {
-                const header = document.getElementById('header');
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // Mobile Menu Toggle - Check if elements exist before using them
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.getElementById('nav-links');
-
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-
-                    const icon = menuToggle.querySelector('i');
-                    if (navLinks.classList.contains('active')) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
-
-                // Close menu when clicking on a link
-                const navItems = document.querySelectorAll('.nav-links a');
-                navItems.forEach(item => {
-                    item.addEventListener('click', function() {
-                        navLinks.classList.remove('active');
-                        menuToggle.querySelector('i').classList.remove('fa-times');
-                        menuToggle.querySelector('i').classList.add('fa-bars');
-                    });
-                });
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
             }
+            gtag("js", new Date());
 
-            // Smooth Scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') !== '#' && !this.getAttribute('onclick')) {
-                        e.preventDefault();
-
-                        const target = document.querySelector(this.getAttribute('href'));
-                        if (target) {
-                            window.scrollTo({
-                                top: target.offsetTop - 80,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-
-            // Modal Functionality
-            function openModal(modalId) {
-                document.getElementById(modalId).style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal(modalId) {
-                document.getElementById(modalId).style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-
-            // Close modal when clicking outside
-            window.onclick = function(event) {
-                const modals = document.getElementsByClassName('modal');
-                for (let i = 0; i < modals.length; i++) {
-                    if (event.target == modals[i]) {
-                        modals[i].style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                }
-            }
-            
-            // Email reveal functionality
-            const revealButton = document.getElementById('reveal-email');
-            const emailDisplay = document.getElementById('email-display');
-            
-            // The email address in a simple encoded format
-            const encodedEmail = 'ub?nnmi`k-bnl'; // This is "vc@oonjal.com" with a simple shift
-            
-            // Function to decode the email
-            function decodeEmail(encoded) {
-                let decoded = '';
-                for (let i = 0; i < encoded.length; i++) {
-                    let charCode = encoded.charCodeAt(i);
-                    if (charCode >= 32 && charCode <= 126) { // Printable ASCII range
-                        charCode = (charCode - 32 + 1) % 95 + 32; // Shift by 1 in the printable range
-                    }
-                    decoded += String.fromCharCode(charCode);
-                }
-                return decoded;
-            }
-            
-            // Make sure the elements exist before adding event listeners
-            if (revealButton && emailDisplay) {
-                // Show email immediately on click/press
-                revealButton.addEventListener('mousedown', function() {
-                    // Show the email when button is pressed
-                    emailDisplay.textContent = decodeEmail(encodedEmail);
-                    emailDisplay.style.display = 'block';
-                    revealButton.textContent = 'Please email us at below address';
-                });
-                
-                // Hide email when button is released
-                revealButton.addEventListener('mouseup', function() {
-                    // Hide the email when button is released
-                    emailDisplay.style.display = 'none';
-                    revealButton.textContent = 'Click to show email';
-                });
-                
-                revealButton.addEventListener('mouseleave', function() {
-                    // Also hide email if mouse leaves the button
-                    emailDisplay.style.display = 'none';
-                    revealButton.textContent = 'Click to show email';
-                });
-                
-                // For touch devices
-                revealButton.addEventListener('touchstart', function(e) {
-                    e.preventDefault();
-                    // Show the email when touched
-                    emailDisplay.textContent = decodeEmail(encodedEmail);
-                    emailDisplay.style.display = 'block';
-                    revealButton.textContent = 'Email Revealed';
-                });
-                
-                revealButton.addEventListener('touchend', function() {
-                    // Hide the email when touch ends
-                    emailDisplay.style.display = 'none';
-                    revealButton.textContent = 'Click to show email';
-                });
-                
-                revealButton.addEventListener('touchcancel', function() {
-                    // Also hide email if touch is canceled
-                    emailDisplay.style.display = 'none';
-                    revealButton.textContent = 'Click to show email';
-                });
-            }
+            gtag("config", "G-7TGM9KCMHG");
         </script>
     </body>
 </html>
