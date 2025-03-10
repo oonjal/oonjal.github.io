@@ -136,102 +136,6 @@ section {
   text-align: center;
 }
 
-/* Simple Media Queries for Responsiveness */
-
-/* Tablets and smaller desktops */
-@media (max-width: 992px) {
-  .container {
-    padding-left: 150px;
-  }
-
-  h1 {
-    font-size: 46px;
-    font-weight: 400;
-  }
-
-  h2 {
-    font-size: 26px;
-    font-weight: 300;
-  }
-}
-
-/* Tablets and large phones */
-@media (max-width: 768px) {
-  .timeline {
-    left: 50px;
-  }
-
-  .container {
-    padding-left: 80px;
-    padding-right: 15px;
-  }
-
-  h1 {
-    font-size: 40px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  section {
-    padding: 15px;
-  }
-}
-
-/* Small phones */
-@media (max-width: 576px) {
-  .timeline {
-    left: 20px;
-  }
-
-  .container {
-    padding-left: 40px;
-    padding-right: 10px;
-  }
-
-  h1 {
-    font-size: a30px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-
-  .logo img {
-    height: 120px; /* Adjusted from original 200px */
-    justify-content: inherit;
-  }
-}
-
-/* Very small screens */
-@media (max-width: 400px) {
-  .timeline {
-    display: none; /* Hide timeline on very small screens */
-  }
-
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  section {
-    padding: 10px;
-  }
-}
-
 .email-protect {
   direction: rtl;
   unicode-bidi: bidi-override;
@@ -320,4 +224,103 @@ section {
 
 .floating-line a {
   color: #bababa;
+}
+
+/* Simple Media Queries for Responsiveness */
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+  .container {
+    padding-left: 150px;
+  }
+
+  h1 {
+    font-size: 46px;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 300;
+  }
+}
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+  .timeline {
+    left: 50px;
+  }
+
+  .container {
+    padding-left: 80px;
+    padding-right: 15px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  section {
+    padding: 15px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+  .timeline {
+    left: 20px;
+  }
+
+  .container {
+    padding-left: 40px;
+    padding-right: 10px;
+  }
+
+  h1 {
+    font-size: a30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .logo img {
+    height: 120px; /* Adjusted from original 200px */
+    justify-content: inherit;
+  }
+  .floating-line {
+    left: -150px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .timeline {
+    display: none; /* Hide timeline on very small screens */
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 10px;
+  }
 }
