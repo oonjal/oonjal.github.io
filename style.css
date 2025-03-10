@@ -126,7 +126,8 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 600px;
+  max-width: 660px;
+  text-align: justify;
 }
 
 /* Header styling */
