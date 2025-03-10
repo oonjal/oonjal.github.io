@@ -1,229 +1,102 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Oonjal Ventures | Investing in Tomorrow's Innovations</title>
 
-        <!-- Google Font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oonjal Ventures</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
-        
-        <style>
-            /* Zigzag Pattern Background */
-            .zigzag-container {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                z-index: -1;
-                pointer-events: none;
-            }
-            
-            .left-color {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 50%;
-                height: 100%;
-                background-color: rgba(255, 214, 214, 0.5);
-            }
-            
-            .right-color {
-                position: absolute;
-                top: 0;
-                left: 50%;
-                width: 50%;
-                height: 100%;
-                background-color: rgba(230, 240, 244, 0.5);
-            }
-            
-            .zigzag {
-                position: absolute;
-                top: 0;
-                left: 50%;
-                height: 100%;
-                width: 120px;
-                transform: translateX(-60px);
-            }
-            
-            .zigzag-path {
-                height: 100%;
-                width: 100%;
-                background-repeat: repeat-y;
-                background-position: center;
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='120' viewBox='0 0 60 120' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 60,0 0,30 60,60 0,90 60,120 0,120' style='fill:rgba(255, 214, 214, 0.5);'/%3E%3Cpolygon points='60,0 60,30 0,60 60,90 0,120 60,120' style='fill:rgba(230, 240, 244, 0.5);'/%3E%3C/svg%3E");
-            }
-        </style>
-    </head>
-    
-    <body>
-        <!-- Zigzag Pattern Background -->
-        <div class="zigzag-container">
-            <div class="left-color"></div>
-            <div class="right-color"></div>
-            <div class="zigzag">
-                <div class="zigzag-path"></div>
-            </div>
-        </div>
-        
-        <header id="header">
-            <div class="container">
-                <nav class="navbar">
-                    <a href="#" class="logo">
-                        <img src="assets/images/oonjal-logo-transparent-100.png" alt="Oonjal Ventures Logo" />
-                    </a>
-                </nav>
-            </div>
-        </header>
+<body>
 
-        <ul class="timeline">
-            <li class="bar"></li>
-        </ul>
+    <nav class="floating-menu">
+        <a href="#about"><i class="fas fa-info-circle"></i> </a>
+        <a href="#profile"><i class="fas fa-user-circle"></i> </a>
+        <a href="#contact"><i class="fas fa-envelope"></i> </a>
+        <a href="#disclaimer"><i class="fas fa-exclamation-circle"></i> </a>
+    </nav>
 
+    <header id="header">
         <div class="container">
-            <section data-name="us">
-                <h1>Us</h1>
-                <h2>
-                    Oonjal Ventures partners with visionary entrepreneurs to build category-defining companies that
-                    transforms productivity.
-                </h2>
-                <h2>
-                    We are a team of former CIOs and CTOs who understand the need for solving practical, real-world
-                    problems.
-                </h2>
-            </section>
-
-            <section data-name="Profile">
-                <h1>Profile</h1>
-                <h2>
-                    We profile tools and technologies that use AI, Automation and Cloud to transform businesses,
-                    streamline operations, and drive innovation across industries.
-                </h2>
-                <h2>
-                    Our focus is on identifying scalable solutions that deliver measurable ROI while helpjsing
-                    organizations navigate the rapidly evolving digital landscape.
-                </h2>
-            </section>
-
-            <section data-name="Contact">
-                <h1>Contact</h1>
-                <h2>
-                    <a class="email-protect" href="javascript:void(0)">moc.lajnoo@cv</a> and connect with us over email.
-                    All information will be treated as company confidential.
-                </h2>
-            </section>
-
-            <section data-name="Disclaimer">
-                <h1>Disclaimers & Copyrights</h1>
-                <h3>© 2025 Oonjal Ventures. All Rights Reserved.</h3>
-                <p>
-                    All content on this website, including but not limited to text, graphics, logos, icons, images,
-                    audio clips, digital downloads, and data compilations, is the property of Oonjal Ventures and is
-                    protected by international copyright laws.
-                </p>
-                <p>
-                    At Oonjal Ventures, we respect your privacy and are committed to protecting it through our
-                    compliance with this policy. By accessing this website, you agree to be bound by these website Terms
-                    and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for
-                    compliance with any applicable local laws.
-                </p>
-            </section>
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="assets/images/oonjal-logo-transparent.png">
+                </a>
+            </nav>
         </div>
+    </header>
 
-        <!-- Scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script>
-            $(function () {
-                function sumSection() {
-                    return $(".container").height();
-                }
+    <div class="container">
 
-                function setDimensionBar() {
-                    $(".bar").css({
-                        height: ($(window).height() / sumSection()) * 100 + "%"
-                    });
-                }
+        <section id="about">
+            <h1>About Us</h1>
+            <h2>
+                <b>Oonjal Ventures</b> partners with visionary entrepreneurs to build category-defining companies
+                that transforms productivity.
+            </h2>
+        </section>
 
-                function setSection() {
-                    $.each($("section"), function (i, element) {
-                        $(element).css({
-                            "min-height": $(window).height()
-                        });
-                    });
-                }
+        <section id="profile">
+            <h1>Profile</h1>
+            <h2>
+                We leverage <b>AI, Automation and Cloud Scale</b> to transform businesses, streamline operations,
+                and drive innovation across industries.
+            </h2>
+        </section>
 
-                function addBehaviours() {
-                    let sections = $("section");
-                    $.each($(".node"), function (i, element) {
-                        $(element).on("click", function (e) {
-                            e.preventDefault();
-                            let scroll = $(sections[i]).offset().top;
-                            $("html, body").animate(
-                                {
-                                    scrollTop: scroll
-                                },
-                                500
-                            );
-                        });
-                    });
-                }
+        <section id="contact">
+            <h1>Contact</h1>
+            <h2>
+                <a href="mailto:vc@oonjal.com">vc@oonjal.com</a>
+            </h2>
+        </section>
 
-                function arrangeNodes() {
-                    $(".node").remove();
-                    $.each($("section"), function (i, element) {
-                        let name = $(element).data("name");
-                        let node = $("<li class='node'><span>" + name + "</span></li>");
-                        $(".timeline").append(node);
+        <section id="disclaimer">
+            <h1>Disclaimer</h1>
+            <h3>© 2025 Oonjal Ventures. All Rights Reserved.</h3>
+        </section>
 
-                        $(node).css({
-                            top: ($(".timeline").height() / $(document).height()) * $(element).offset().top
-                        });
-                    });
-                    addBehaviours();
-                }
+    </div>
 
-                $(window).on("scroll", function () {
-                    let top = (window.scrollY / sumSection()) * 100;
-                    $(".bar").css({
-                        top: top + "%"
-                    });
-                });
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 
-                $(window).on("resize", function () {
-                    setSection();
-                    arrangeNodes();
-                    setDimensionBar();
-                });
+    <style>
+        .floating-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 250px;
+        }
 
-                setTimeout(function () {
-                    setSection();
-                    arrangeNodes();
-                    setDimensionBar();
-                }, 200);
-            });
+        .floating-menu a {
+            text-decoration: none;
+            color: #bcbcbc;
+            font-weight: 500;
+            text-align: center;
+        }
 
-            document.addEventListener("DOMContentLoaded", function () {
-                const emailLinks = document.querySelectorAll(".email-protect");
+        .floating-menu a:hover {
+            color: #ff001d;
+        }
 
-                emailLinks.forEach((link) => {
-                    link.addEventListener("click", function (e) {
-                        window.location.href = "mailto:vc@oonjal.com";
-                        e.preventDefault();
-                    });
-                });
-            });
-        </script>
-    </body>
+        .floating-menu a i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+    </style>
+</body>
+
 </html>

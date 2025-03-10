@@ -301,3 +301,20 @@ section {
   width: 100%;
   overflow: hidden;
 }
+
+.floating-line {
+    font-size: 10px;
+    position: fixed;
+    bottom: 20px;       /* Adjust as needed */
+    right: 20px;        /* Adjust as needed */
+    width: 200px;       /* Length of the line */
+    height: 0px;        /* Thickness of the line */
+    background-color: #7045ff; /* Line color */
+    z-index: 1000;
+   color: #bababa 
+
+}
+
+.floating-line a {
+ color: #bababa 
+}
