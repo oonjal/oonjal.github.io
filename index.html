@@ -101,5 +101,19 @@
 
             gtag("config", "G-7TGM9KCMHG");
         </script>
+	<div id="cookie-popup" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: black; color: white; padding: 10px 20px; border-radius: 5px; opacity: 0.9; z-index: 1000; transition: opacity 0.5s ease;">
+    We do not use cookies on this site.
+</div>
+
+<script>
+    setTimeout(() => {
+        document.getElementById("cookie-popup").style.opacity = "0";
+    }, 2000);
+
+    setTimeout(() => {
+        document.getElementById("cookie-popup").style.display = "none";
+    }, 2500);
+</script>
+
     </body>
 </html>
