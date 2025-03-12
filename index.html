@@ -9,7 +9,7 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.min.css" />
         <link rel="manifest" href="site.webmanifest" />
 
         <!-- Favicon -->
@@ -59,8 +59,10 @@
             <section data-name="Contact" id="contact">
                 <h1>Contact</h1>
                 <h2>
-                    <a class="email-protect" href="javascript:void(0)"><span style="background-color: white">moc.lajnoo@cv</span>
-                    </a> and connect with us over email. All information will be treated as company confidential.
+                    <a class="email-protect" href="javascript:void(0)"
+                        ><span style="background-color: white">moc.lajnoo@cv</span>
+                    </a>
+                    and connect with us over email. All information will be treated as company confidential.
                 </h2>
             </section>
 
@@ -74,15 +76,12 @@
                 </h1>
                 <h3>© 2025 Oonjal Ventures. All Rights Reserved.</h3>
                 <p>
-                    All content on this website, including but not limited to text, graphics, logos, icons, images,
-                    audio clips, digital downloads, and data compilations, is the property of Oonjal Ventures and is
-                    protected by international copyright laws.
+                    All content on this website, including text, images, logos, and digital media, is the property of
+                    Oonjal Ventures and protected by international copyright laws.
                 </p>
                 <p>
-                    At Oonjal Ventures, we respect your privacy and are committed to protecting it through our
-                    compliance with this policy. By accessing this website, you agree to be bound by these website Terms
-                    and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for
-                    compliance with any applicable local laws.
+                    At Oonjal Ventures, We respect your privacy and do not use cookies or track personal data. By using
+                    this website, you agree to our Terms & Conditions and compliance with applicable laws.
                 </p>
             </section>
         </div>
@@ -101,19 +100,28 @@
 
             gtag("config", "G-7TGM9KCMHG");
         </script>
-	<div id="cookie-popup" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: black; color: white; padding: 10px 20px; border-radius: 5px; opacity: 0.9; z-index: 1000; transition: opacity 0.5s ease;">
-    We do not use cookies on this site.
-</div>
 
-<script>
-    setTimeout(() => {
-        document.getElementById("cookie-popup").style.opacity = "0";
-    }, 2000);
+        <!-- Cookies -->
+        <div id="cookie-popup">
+            <span>We do not use cookies on this site.</span>
+            <button id="close-popup">✖</button>
+        </div>
 
-    setTimeout(() => {
-        document.getElementById("cookie-popup").style.display = "none";
-    }, 2500);
-</script>
+        <script>
+            const popup = document.getElementById("cookie-popup");
+            const closeButton = document.getElementById("close-popup");
 
+            setTimeout(() => {
+                popup.style.opacity = "0";
+            }, 5000);
+
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 2500);
+
+            closeButton.addEventListener("click", () => {
+                popup.style.display = "none";
+            });
+        </script>
     </body>
 </html>
