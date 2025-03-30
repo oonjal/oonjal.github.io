@@ -142,7 +142,7 @@ section {
   display: inline-block;
   position: relative;
   cursor: pointer;
-  color: #ff001d;
+  color: #272727;
   text-decoration: underline;
 }
 
@@ -218,12 +218,12 @@ section {
   top: 20%;
   background-color: #7045ff; /* Line color */
   z-index: 1000;
-  color: #bababa;
+  color: #cacaca;
   transform: rotate(-90deg);
 }
 
 .floating-line a {
-  color: #bababa;
+  color: #cacaca;
 }
 
 #cookie-popup {
