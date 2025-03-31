@@ -147,7 +147,7 @@ section {
 }
 
 .email-protect::after {
-  color: #ff001d;
+  color: #27272;
   font-weight: 500;
   content: "Drop us a note";
   position: absolute;
@@ -218,12 +218,12 @@ section {
   top: 20%;
   background-color: #7045ff; /* Line color */
   z-index: 1000;
-  color: #cacaca;
+  color: #606060;
   transform: rotate(-90deg);
 }
 
 .floating-line a {
-  color: #cacaca;
+  color: #606060;
 }
 
 #cookie-popup {
